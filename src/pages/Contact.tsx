@@ -203,6 +203,7 @@ const Contact = () => {
 									<input
 										type="text"
 										id="name"
+										name="name"
 										required
 										className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 focus:border-white/20 focus:ring-1 focus:ring-white/20 outline-none transition-colors text-sm sm:text-base"
 										value={formData.name}
@@ -216,6 +217,7 @@ const Contact = () => {
 									<input
 										type="email"
 										id="email"
+										name="email"
 										required
 										className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 focus:border-white/20 focus:ring-1 focus:ring-white/20 outline-none transition-colors text-sm sm:text-base"
 										value={formData.email}
@@ -231,6 +233,7 @@ const Contact = () => {
 								<input
 									type="text"
 									id="subject"
+									name="subject"
 									required
 									className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 focus:border-white/20 focus:ring-1 focus:ring-white/20 outline-none transition-colors text-sm sm:text-base"
 									value={formData.subject}
@@ -244,6 +247,7 @@ const Contact = () => {
 								</label>
 								<textarea
 									id="message"
+									name="message"
 									rows={6}
 									required
 									className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 focus:border-white/20 focus:ring-1 focus:ring-white/20 outline-none transition-colors resize-none text-sm sm:text-base"

@@ -78,7 +78,6 @@ export async function POST(request: NextRequest) {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Accept': 'application/json',
 			},
 			body: JSON.stringify({
 				access_key: WEB3FORMS_ACCESS_KEY,
@@ -87,21 +86,13 @@ export async function POST(request: NextRequest) {
 				subject,
 				message,
 				from_name: name,
+				to_email: 'nirmalnaikca@gmail.com',
 			}),
 		});
 
-		const responseText = await web3formsResponse.text();
-		console.log('Web3Forms raw response:', responseText);
+		const web3formsData = await web3formsResponse.json();
 
-		let web3formsData;
-		try {
-			web3formsData = JSON.parse(responseText);
-		} catch {
-			console.error('Web3Forms returned non-JSON:', responseText);
-			throw new Error('Web3Forms returned an invalid response. Check your access key.');
-		}
-
-		if (!web3formsResponse.ok || !web3formsData.success) {
+		if (!web3formsResponse.ok) {
 			throw new Error(web3formsData.message || 'Failed to send email');
 		}
 
